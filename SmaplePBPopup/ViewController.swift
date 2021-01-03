@@ -6,14 +6,30 @@
 //
 
 import UIKit
-
-class ViewController: UIViewController {
+import PBPopupController
+class ViewController: UIViewController, PBPopupControllerDelegate, PBPopupBarDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Sample"
         // Do any additional setup after loading the view.
     }
+    @IBAction func displayPopupAction(_ sender: Any) {
+        self.tabBarController?.popupController.delegate = self
+                
+                if let popupBar = self.tabBarController?.popupBar {
 
+                    popupBar.dataSource = self
+                    popupBar.title = "Title"
+                    
+                    let popupContentVC = PopUpViewController()
+                    
+                    self.tabBarController?.presentPopupBar(withPopupContentViewController: popupContentVC, animated: true, completion: {
+                        print("Presented")
+                    })
+                }
+    }
+    
 
 }
 
