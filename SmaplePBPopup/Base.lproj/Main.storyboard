@@ -44,6 +44,72 @@
             </objects>
             <point key="canvasLocation" x="1868.1159420289857" y="88.392857142857139"/>
         </scene>
+        <!--Pop Up View Controller-->
+        <scene sceneID="6Ff-wE-Oi1">
+            <objects>
+                <viewController storyboardIdentifier="PopUpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vnh-GG-gQe" customClass="PopUpViewController" customModule="SmaplePBPopup" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="deB-as-3GV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KgH-NE-w9C">
+                                <rect key="frame" x="82" y="155" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="71m-DG-fgY"/>
+                                    <constraint firstAttribute="height" constant="250" id="GSp-E4-ROf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LR2-ZS-T2a">
+                                <rect key="frame" x="20" y="423" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="myr-ne-6Dk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghN-KA-1yH">
+                                <rect key="frame" x="20" y="467" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="mXC-9h-O1b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHM-FN-5ba">
+                                <rect key="frame" x="82" y="525" width="250" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="PNa-Ui-vY3"/>
+                                    <constraint firstAttribute="width" constant="250" id="jYg-OA-GhR"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" image="play.fill" catalog="system"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="py5-tb-DwD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LR2-ZS-T2a" firstAttribute="top" secondItem="KgH-NE-w9C" secondAttribute="bottom" constant="18" id="5Ag-my-xs5"/>
+                            <constraint firstItem="iHM-FN-5ba" firstAttribute="centerX" secondItem="deB-as-3GV" secondAttribute="centerX" id="5Vn-B7-KZy"/>
+                            <constraint firstItem="ghN-KA-1yH" firstAttribute="top" secondItem="LR2-ZS-T2a" secondAttribute="bottom" constant="14" id="G8w-3L-3p8"/>
+                            <constraint firstItem="iHM-FN-5ba" firstAttribute="top" secondItem="ghN-KA-1yH" secondAttribute="bottom" constant="28" id="MJP-Xn-8yZ"/>
+                            <constraint firstItem="ghN-KA-1yH" firstAttribute="centerX" secondItem="deB-as-3GV" secondAttribute="centerX" id="YoJ-me-TI4"/>
+                            <constraint firstItem="KgH-NE-w9C" firstAttribute="centerX" secondItem="deB-as-3GV" secondAttribute="centerX" id="ajr-mU-e49"/>
+                            <constraint firstItem="KgH-NE-w9C" firstAttribute="top" secondItem="py5-tb-DwD" secondAttribute="top" constant="111" id="fsZ-RB-As9"/>
+                            <constraint firstItem="LR2-ZS-T2a" firstAttribute="centerX" secondItem="deB-as-3GV" secondAttribute="centerX" id="ol8-pz-VJ6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="artistTitle" destination="ghN-KA-1yH" id="Ac8-Gy-Mpd"/>
+                        <outlet property="playButton" destination="iHM-FN-5ba" id="Win-wu-Adb"/>
+                        <outlet property="songImageView" destination="KgH-NE-w9C" id="rT4-ms-E7C"/>
+                        <outlet property="songTitle" destination="LR2-ZS-T2a" id="uwa-SP-Hiy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oE1-Gv-33G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2971.0144927536235" y="88.392857142857139"/>
+        </scene>
         <!--Item-->
         <scene sceneID="G4t-hd-gRd">
             <objects>
@@ -69,6 +135,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="NOS-eu-ZBI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="muK-Oj-ETw">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -82,11 +149,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
